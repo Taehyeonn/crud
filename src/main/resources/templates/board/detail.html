@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link href="../css/bootstrap.min.css"
+        th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <title>Title</title>
+</head>
+<body>
+  <div>
+    <label>제목</label>
+    <input type="text" th:value="${board.title}" value="title" readonly>
+  </div>
+  <div>
+    <label>내용</label>
+    <input type="text" th:value="${board.content}" value="content" readonly>
+  </div>
+  <div>
+    <button type="button"
+            onclick="location.href='editForm.html'"
+            th:onclick="|location.href='@{/board/list/{boardId}/edit(boardId=${board.id})}'|">수정
+    </button>
+    <button type="button"
+            onclick="location.href='items.html'"
+            th:onclick="|location.href='@{/board/list}'|">목록
+    </button>
+    <button type="button"
+            onclick="location.href='items.html'"
+            th:onclick="|location.href='@{/board/list/{boardId}/delete(boardId=${board.id})}'|">삭제
+    </button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link href="../css/bootstrap.min.css"
+        th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+  <form action="list.html" th:action method="post">
+      <button type="submit">삭제</button>
+      <button type="button"
+              onclick="location.href='list.html'"
+              th:onclick="|location.href='@{/board/list}'|">취소
+      </button>
+    </div>
+  </form>
+</body>
+</html>
