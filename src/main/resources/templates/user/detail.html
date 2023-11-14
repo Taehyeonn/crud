@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/bootstrap.min.css"
+          th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div>
+    <label>num</label>
+    <input type="text" th:value="${user.id}" value="id" readonly>
+</div>
+<div>
+    <label>id</label>
+    <input type="text" th:value="${user.userId}" value="userId" readonly>
+</div>
+<div>
+    <label>pw</label>
+    <input type="text" th:value="${user.userPw}" value="userPw" readonly>
+</div>
+<div>
+    <label>email</label>
+    <input type="text" th:value="${user.email}" value="email" readonly>
+</div>
+<div>
+    <button type="button"
+            onclick="location.href='items.html'"
+            th:onclick="|location.href='@{/user/list}'|">목록
+    </button>
+    <button type="button"
+            onclick="location.href='items.html'"
+            th:onclick="|location.href='@{/user/detail/{userNum}/delete(userNum=${user.id})}'|">삭제
+    </button>
+</div>
+</body>
+</html>

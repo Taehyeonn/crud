@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/bootstrap.min.css"
+          th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>번호</th><th>id</th><th>pw</th><th>email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${list}">
+        <td><a href="detail.html" th:href="@{|/user/detail/${user.id}|}" th:text="${user.id}">11</a></td>
+        <td><a href="detail.html" th:href="@{|/user/detail/${user.id}|}" th:text="${user.userId}">id</a></td>
+        <td><a th:text="${user.userPw}">pw</a></td>
+        <td><a th:text="${user.email}">email</a></td>
+    </tr>
+    </tbody>
+</table>
+<button onclick="location.href='add.html'"
+        th:onclick="|location.href='@{/user/list/add}'|"
+        type="button">등록
+</button>
+</body>
+</html>

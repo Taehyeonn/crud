@@ -10,7 +10,7 @@ public class User {
     private String userPw;
     private String email;
 
-    public User(Long num) {
+    public User() {
     }
 
     public User(String userId, String userPw, String email) {
